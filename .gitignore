@@ -1,2 +1,4 @@
 node_modules/
 
+# This is a temp directory where files are uploaded
+uploads/
