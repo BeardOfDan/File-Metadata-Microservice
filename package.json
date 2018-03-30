@@ -1,0 +1,28 @@
+{
+  "name": "file-metadata-microservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "multer": "^1.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeardOfDan/File-Metadata-Microservice.git"
+  },
+  "author": "Dan Roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BeardOfDan/File-Metadata-Microservice/issues"
+  },
+  "homepage": "https://github.com/BeardOfDan/File-Metadata-Microservice#readme"
+}
