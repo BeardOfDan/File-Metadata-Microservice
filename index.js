@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const fs = require('fs');
 
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
@@ -14,9 +15,14 @@ app.get('/', (req, res, next) => {
 
 app.post('/get-file-size', upload.single('file'), function (req, res, next) {
   const { originalname, size } = req.file;
+  const filePath = req.file.path; // path is already a variable (the module), so not an ES6 declaration
 
-  // TODO: use req.filename || req.path to delete the newly saved file
-  // This will stop me from running out of space
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      console.log(`ERROR! Failed to delete ${filePath}`)
+    }
+    // console.log(`successfully deleted ${filePath}`);
+  });
 
   // TODO: make a 'formattedSize' field
   // This will use MB || KB to display the file size in an easily readable way
