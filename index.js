@@ -25,7 +25,7 @@ app.post('/get-file-size', upload.single('file'), function (req, res, next) {
     // console.log(`successfully deleted ${filePath}`);
   });
 
-  const labels = ['KB', 'MB', 'GB'];
+  const labels = ['KB', 'MB', 'GB', 'TB'];
 
   let formattedSize = size;
   let label = 'Bytes';
