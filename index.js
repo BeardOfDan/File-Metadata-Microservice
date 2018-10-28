@@ -14,8 +14,8 @@ app.get('/', (req, res, next) => {
 });
 
 app.post('/get-file-size', upload.single('file'), function (req, res, next) {
-  const { originalname, size } = req.file;
-  const filePath = req.file.path; // path is already a variable (the module), so not an ES6 declaration
+  // path is already a variable (the module), so it is renamed
+  const { path: filePath, originalname, size } = req.file;
 
   // Delete the file, it's no longer needed
   fs.unlink(filePath, (err) => {
